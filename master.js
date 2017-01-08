@@ -17,7 +17,13 @@ const sliderImages = document.querySelectorAll('.slide-in');
 
 
 function checkSlide(e) {
-  console.count(e);
+  // console.log(window.scrollY);
+  sliderImages.forEach(sliderImage => {
+    // half way throw the image
+    const slideInAt = (window.scrollY + window.innerHeight) - sliderImage.height / 2;
+    // bottom of the image
+    const imageBottom = sliderImage.offsetTop + sliderImage.height;
+  });
 }
 
 window.addEventListener('scroll', debounce(checkSlide));
